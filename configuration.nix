@@ -1,3 +1,4 @@
+# This is the configuration.nix used for the NixOSBuilder virtual machine
 { config, pkgs, ... }:
 {
   require = [ ./hardware-configuration.nix ];
