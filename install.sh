@@ -42,8 +42,11 @@ cp $DIST/id_rsa /etc/nix/signing-key.sec
 cp $DIST/signing-key.pub /etc/nix/signing-key.pub
 mkdir -p /tmp/current-load
 
-echo "Installing Virtual Machine"
-VBoxManage import $DIST/NixOSBuilder.ova
+echo "Downloading Nix OS Builder image"
+cd $DIST
+curl -O http://nixops-mac.s3.amazonaws.com/NixOSBuilder.ova
+echo "Installing Nix OS Builder"
+VBoxManage import NixOSBuilder.ova
 VBoxManage startvm NixOSBuilder
 
 echo "Setting up remote builds"
