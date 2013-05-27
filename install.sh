@@ -1,7 +1,7 @@
 #!/bin/bash -ex
 
 DIST="`pwd`"
-DMG=~/NixStore2.dmg
+DMG=~/NixStore.dmg
 
 echo "Creating disk image"
 hdiutil create -size 5G -fs "Case-sensitive HFS+" -volname NixStore $DMG
