@@ -46,3 +46,13 @@ To test:
     nixops deploy -d test
 
 After you reboot the `NixStore.dmg` will not automatically be remounted to mount it again, run `./attach-disk.sh` again.
+
+Resizing NixStore.dmg
+---------------------
+
+By default the NixStore.dmg file is 10G which should be enough for a while, if you want resize it, play with these commands:
+
+    hdiutil detach /nix
+    hdiutil resize -size 50g NixStore.dmg
+    hdiutil attach NixStore.dmg -mountpoint /nix
+
