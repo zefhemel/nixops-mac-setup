@@ -6,7 +6,7 @@ Procedure
 The script executes the following steps:
 
 1. Create a disk image with a case-sensitive file system and mount it at `/nix`.
-2. Install Nix
+2. Install Nix and append environment variable setup to `~/.profile`
 3. Create and start a VirtualBox VM to be used to perform builds to be pushed to deployed servers (NixOSBuild)
 4. Configure Nix to delegate Linux builds to the above NixOSBuild VM
 5. Install NixOps
