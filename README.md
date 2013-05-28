@@ -39,3 +39,8 @@ Then, check out this repository in a terminal and run the install script:
     git clone git://github.com/zefhemel/nixos-mac-setup.git
     cd nixos-mac-setup
     ./install.sh
+
+To test:
+
+    nixops create test/trivial.nix test/trivial-vbox.nix --name test
+    nixops deploy -d test
