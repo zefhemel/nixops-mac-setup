@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
 ./install-nix.sh
-./setup-builder.sh
 ./install-nixops.sh
 
 echo "Should be all done."

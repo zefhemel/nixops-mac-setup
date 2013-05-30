@@ -7,16 +7,13 @@ The script executes the following steps:
 
 1. Create a disk image with a case-sensitive file system and mount it at `/nix`.
 2. Install Nix and append environment variable setup to `~/.profile`
-3. Create and start a VirtualBox VM to be used to perform builds to be pushed to deployed servers (NixOSBuild)
-4. Configure Nix to delegate Linux builds to the above NixOSBuild VM
 5. Install NixOps
 
 Requirements
 ------------
 * No Nix installed yet, clean system (Nix-wise)
-* Port 2222 available to bind to (used for port mapping the builder VM)
 * XCode command line tools installed (make, gcc etc.)
-* Virtualbox
+* Virtualbox (for deployments to VirtualBox)
 * Git installed: http://git-scm.com/download/mac
 
 Use

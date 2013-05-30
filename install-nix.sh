@@ -23,5 +23,8 @@ echo "export NIX_PATH=/nix/var/nix/profiles/per-user/$USER/channels/nixos" >> $R
 
 source $RCFILE
 
-nix-channel --add http://nixos.org/releases/nixos/channels/nixos-unstable
+nix-channel --add http://nixos.org/releases/nixos/channels/nixos-unstable nixos
+nix-channel --add http://hydra.nixos.org/jobset/nix/trunk/channel/latest nix
 nix-channel --update
+echo Upgrading Nix
+nix-env -i nix
