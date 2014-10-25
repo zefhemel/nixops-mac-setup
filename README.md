@@ -13,6 +13,8 @@ Requirements
 ------------
 * No Nix installed yet, clean system (Nix-wise)
 * XCode command line tools installed (make, gcc etc.)
+  * On 10.9, use XCode 5.1.x
+  * On 10.10, use XCode 6.x
 * Virtualbox (for deployments to VirtualBox)
 * Git installed: http://git-scm.com/download/mac
 
