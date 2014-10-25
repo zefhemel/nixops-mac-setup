@@ -23,7 +23,7 @@ First, configure VirtualBox ([source](http://functional-orbitz.blogspot.se/2013/
 
 * Start VirtualBox.
 * Go to preferences (Cmd-,).
-* Click on Network.
+* Click on Network / Host-only Networks.
 * If vboxnet0 is not present, add it by clicking the green +.
 * Edit vboxnet0 and make sure DHCP Server is turned on. The settings I use are below.
   * Server Address: 192.168.56.100
