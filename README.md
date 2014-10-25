@@ -43,6 +43,7 @@ To test:
 
     nixops create test/trivial.nix test/trivial-vbox.nix --name test
     nixops deploy -d test
+	nixops ssh -d test machine
 
 After you reboot the `NixStore.dmg` will not automatically be remounted to mount it again, run `./attach-disk.sh` again.
 
