@@ -13,6 +13,8 @@ Requirements
 ------------
 * No Nix installed yet, clean system (Nix-wise)
 * XCode command line tools installed (make, gcc etc.)
+  * On 10.9, use XCode 5.1.x
+  * On 10.10, use XCode 6.x
 * Virtualbox (for deployments to VirtualBox)
 * Git installed: http://git-scm.com/download/mac
 
@@ -23,7 +25,7 @@ First, configure VirtualBox ([source](http://functional-orbitz.blogspot.se/2013/
 
 * Start VirtualBox.
 * Go to preferences (Cmd-,).
-* Click on Network.
+* Click on Network / Host-only Networks.
 * If vboxnet0 is not present, add it by clicking the green +.
 * Edit vboxnet0 and make sure DHCP Server is turned on. The settings I use are below.
   * Server Address: 192.168.56.100
@@ -41,6 +43,7 @@ To test:
 
     nixops create test/trivial.nix test/trivial-vbox.nix --name test
     nixops deploy -d test
+	nixops ssh -d test machine
 
 After you reboot the `NixStore.dmg` will not automatically be remounted to mount it again, run `./attach-disk.sh` again.
 
