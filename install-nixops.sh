@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 echo "Installing NixOps"
+. ~/.profile
 nix-channel --add http://nixos.org/channels/nixos-unstable nixos
 nix-channel --update
 export NIX_PATH=/nix/var/nix/profiles/per-user/$USER/channels/nixos
