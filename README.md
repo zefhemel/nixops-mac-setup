@@ -1,4 +1,4 @@
-Simple one-off script to download and install Nix and NixOps and make it to prepare it for deployments on Mac.
+jimple one-off script to download and install Nix and NixOps and make it to prepare it for deployments on Mac.
 Inspired by [these instructions](http://functional-orbitz.blogspot.se/2013/05/setting-up-nixops-on-mac-os-x-with.html).
 
 Procedure
@@ -44,7 +44,7 @@ To test:
     nixops create test/trivial.nix test/trivial-vbox.nix --name test
     nixops deploy -d test
 
-At this point you will probaly receive a message that not all parts you be built. This is due to an outdated version of `nix` within the virtual machine. Run
+At this point you will probably receive a message that not all parts could be built. This is due to an outdated version of `nix` within the virtual machine. Run
 
    ./updatevms.sh   # update nix
    nixops deploy -d test  # finish deployment
