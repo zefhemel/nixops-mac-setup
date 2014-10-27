@@ -43,7 +43,16 @@ To test:
 
     nixops create test/trivial.nix test/trivial-vbox.nix --name test
     nixops deploy -d test
+
+At this point you will probaly receive a message that not all parts you be built. This is due to an outdated version of `nix` within the virtual machine. Run
+
+   ./updatevms.sh   # update nix
+   nixops deploy -d test  # finish deployment
+
+to fix this. Now you can log into the deployed machine and, e.g., check the output of the web server:
+
 	nixops ssh -d test machine
+	curl localhost
 
 After you reboot the `NixStore.dmg` will not automatically be remounted to mount it again, run `./attach-disk.sh` again.
 
