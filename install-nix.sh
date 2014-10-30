@@ -11,7 +11,7 @@ sudo chown $USER /nix
 
 echo "Downloading and installing Nix"
 cd /
-curl http://hydra.nixos.org/build/6039370/download/1/nix-1.6-x86_64-darwin.tar.bz2 | sudo tar xjf -
+curl http://hydra.nixos.org/build/10272838/download/1/nix-1.7-x86_64-darwin.tar.bz2 | sudo tar xjf -
 sudo chown -R $USER /nix
 rm -f /usr/local/etc/profile.d/nix.sh
 nix-finish-install
