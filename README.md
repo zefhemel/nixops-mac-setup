@@ -1,4 +1,4 @@
-jimple one-off script to download and install Nix and NixOps and make it to prepare it for deployments on Mac.
+Simple one-off script to download and install Nix and NixOps and make it to prepare it for deployments on Mac.
 Inspired by [these instructions](http://functional-orbitz.blogspot.se/2013/05/setting-up-nixops-on-mac-os-x-with.html).
 
 Procedure
@@ -46,8 +46,8 @@ To test:
 
 At this point you will probably receive a message that not all parts could be built. This is due to an outdated version of `nix` within the virtual machine. Run
 
-   ./updatevms.sh   # update nix
-   nixops deploy -d test  # finish deployment
+    ./updatevms.sh   # update nix
+    nixops deploy -d test  # finish deployment
 
 to fix this. Now you can log into the deployed machine and, e.g., check the output of the web server:
 
