@@ -1,3 +1,7 @@
+Note: This step-by-step instruction should be obsolete once nix 1.8 is out.
+
+-------
+
 Simple one-off script to download and install Nix and NixOps and make it to prepare it for deployments on Mac.
 Inspired by [these instructions](http://functional-orbitz.blogspot.se/2013/05/setting-up-nixops-on-mac-os-x-with.html).
 
@@ -13,6 +17,8 @@ Requirements
 ------------
 * No Nix installed yet, clean system (Nix-wise)
 * XCode command line tools installed (make, gcc etc.)
+  * On 10.9, use XCode 5.1.x
+  * On 10.10, use XCode 6.x
 * Virtualbox (for deployments to VirtualBox)
 * Git installed: http://git-scm.com/download/mac
 
@@ -23,7 +29,7 @@ First, configure VirtualBox ([source](http://functional-orbitz.blogspot.se/2013/
 
 * Start VirtualBox.
 * Go to preferences (Cmd-,).
-* Click on Network.
+* Click on Network / Host-only Networks.
 * If vboxnet0 is not present, add it by clicking the green +.
 * Edit vboxnet0 and make sure DHCP Server is turned on. The settings I use are below.
   * Server Address: 192.168.56.100
@@ -41,6 +47,16 @@ To test:
 
     nixops create test/trivial.nix test/trivial-vbox.nix --name test
     nixops deploy -d test
+
+At this point you will probably receive a message that not all parts could be built. This is due to an outdated version of `nix` within the virtual machine. Run
+
+    ./updatevms.sh   # update nix
+    nixops deploy -d test  # finish deployment
+
+to fix this. Now you can log into the deployed machine and, e.g., check the output of the web server:
+
+	nixops ssh -d test machine
+	curl localhost
 
 After you reboot the `NixStore.dmg` will not automatically be remounted to mount it again, run `./attach-disk.sh` again.
 
