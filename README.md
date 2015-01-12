@@ -1,3 +1,7 @@
+Note: This step-by-step instruction should be obsolete once nix 1.8 is out.
+
+-------
+
 Simple one-off script to download and install Nix and NixOps and make it to prepare it for deployments on Mac.
 Inspired by [these instructions](http://functional-orbitz.blogspot.se/2013/05/setting-up-nixops-on-mac-os-x-with.html).
 
